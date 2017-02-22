@@ -6,4 +6,4 @@ Use this function to create your own pauly plots. Just input your own x and y va
 To install, paste this into R:
 
 library(devtools)
-install_github("angmelanie/paulyplots")
+<br>install_github("angmelanie/paulyplots")
