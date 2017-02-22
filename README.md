@@ -7,3 +7,4 @@ To install, paste this into R:
 
 library(devtools)
 <br>install_github("angmelanie/paulyplots")
+<br>See example folder for details
