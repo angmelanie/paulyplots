@@ -1,7 +1,7 @@
 Package: paulyplots
 Title: paulyplots = polyplots
 Version: 0.0.0.9000
-Authors@R: Melang
+Authors@R: person("Mel", "A", email = "melanieang07@gmail.com", role = c("aut", "cre"))
 Description: Creates plots with specific images, preferably Pauly
 Depends: R (>= 3.3.1)
 License: What license is it under?
