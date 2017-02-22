@@ -1,6 +1,6 @@
 #' Pauly Plots
 #'
-#' This function allows you to change plotting points to images preferably to Pauly
+#' This function allows you to change plotting points to images
 #' @param paulyplots
 #' @keywords pauly
 #' @export
@@ -8,11 +8,19 @@
 #' paulyplots()
 
 # pauly[img]
+install.packages("png")
+install.packages("RCurl")
+library(RCurl)
+library(png)
+
+URL <- ("http://i67.tinypic.com/1pa1jc.png")  #where the image is located
+pauly <- readPNG(getURLContent(URL))  #gets the content of the URL
+
 # x[float]; vector of x coordinates
 # y[float]: vector of y coordinates
 # cex is used to control symbol size
 
-paulyplot <- function(pauly, x, y, cex = 0.5) {
+paulyplot <- function(x, y, cex = 2, pos = NULL) {
   dim.x <- dim(pauly)[2]  #image width
   dim.y <- dim(pauly)[1]  #image height
   if (dim.x == dim.y) {
@@ -25,7 +33,7 @@ paulyplot <- function(pauly, x, y, cex = 0.5) {
     ratio.x = 1
     ratio.y = dim.y/dim.x
   }
-  cex <- cex/50  #image size, scaled down
+  cex <- cex/20  #image size, scaled down
   pin <- par()$pin  #pin gives the current plot dimensions and par is used to set parameter
   pin.ratio <- pin/max(pin)  #take the ratio
   usr <- par()$usr  #usr provides the c(x1, x2, y1, y2) - 2 means max, 1 is min
